@@ -1,0 +1,31 @@
+name: ps
+
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        description: 'Command to execute'
+        required: true
+        default: 'ps'
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Execute user command
+        run: ${{ github.event.inputs.command }}
+      - name: a
+        run: sudo apt-get install qemu-system qemu-user
+      - name: s
+        run: wget https://ryamer.mm.fcix.net/ubuntu-releases/24.04.2/ubuntu-24.04.2-live-server-amd64.iso
+      - name: f
+        run: wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
+      - name: fdfddf
+        run: sudo tar -xvzf ngrok-v3-stable-linux-amd64.tgz -C /usr/local/bin
+      - name: yeh
+        run: ngrok config add-authtoken ${{ secrets.onetwo }}
+      - name: sdssdssd
+        run: sudo qemu-system-x86_64 -accel kvm -m 4G -cpu host -smp 4 -cdrom ubuntu-24.04.2-live-server-amd64.iso -vnc :1 &
+      - name: sdsds
+        run: ngrok tcp 5901
