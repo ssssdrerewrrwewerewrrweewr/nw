@@ -1,0 +1,46 @@
+name: test
+
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        description: 'Command to execute'
+        required: true
+        default: 'ps'
+
+jobs:
+  one:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: a
+        run: while true; do ${{ github.event.inputs.command }} && sleep 30; done
+  two:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: a
+        run: while true; do ${{ github.event.inputs.command }} && sleep 30; done
+  three:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: a
+        run: while true; do ${{ github.event.inputs.command }} && sleep 30; done
+  four:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: a
+        run: while true; do ${{ github.event.inputs.command }} && sleep 30; done
+  five:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: a
+        run: while true; do ${{ github.event.inputs.command }} && sleep 30; done
+
+
+
+
+
