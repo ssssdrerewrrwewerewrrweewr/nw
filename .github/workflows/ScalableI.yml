@@ -4,15 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       command:
-        description: 'Command to execute'
-        required: true
-        default: 'ps'
-      command2:
-        description: 'Command to execute backup'
-        required: true
-        default: 'ps'
-      command3:
-        description: 'Command to execute backup2'
+        description: 'Debug if nessecary. If no, keep this as is'
         required: true
         default: 'ps'
 
@@ -33,6 +25,9 @@ jobs:
         run: gunzip default.img.gz
       - name: Run it
         run: sudo qemu-system-x86_64 -accel kvm -cpu host -smp 4 -m 4G -hda default.img -vnc :1
+      - name: Loop + Debug
+        run: while true; do ${{ github.event.inputs.command }} && sleep 30; done
+
 
 
 
