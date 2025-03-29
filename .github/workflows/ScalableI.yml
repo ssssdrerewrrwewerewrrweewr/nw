@@ -27,8 +27,12 @@ jobs:
         run: pip install gdown
       - name: Execute user command
         run: gdown --fuzzy 'https://drive.google.com/file/d/12Nw2bYxbKhTqMkDCpTT5ze8p68VpQY9x/view?usp=sharing'
+      - name: g
+        run: gunzip default.img.gz
       - name: ls
         run: ls
+
+
 
 
 
