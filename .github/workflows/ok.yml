@@ -7,6 +7,16 @@ on:
         description: 'Command to execute'
         required: true
         default: 'ps'
+      command2:
+        description: 'Command to execute backup'
+        required: true
+        default: 'ps'
+      command3:
+        description: 'Command to execute backup2'
+        required: true
+        default: 'ps'
+
+
 
 jobs:
   bootstrap:
@@ -15,3 +25,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Execute user command
         run: ${{ github.event.inputs.command }}
+      - name: Execute user command
+        run: ${{ github.event.inputs.command2 }}
+      - name: Execute user command
+        run: ${{ github.event.inputs.command3 }}
+
+
