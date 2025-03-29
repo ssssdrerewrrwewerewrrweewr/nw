@@ -24,7 +24,7 @@ jobs:
       - name: Extract it
         run: gunzip default.img.gz
       - name: Run it
-        run: sudo qemu-system-x86_64 -accel kvm -cpu host -smp 4 -m 4G -hda default.img -vnc :1
+        run: sudo qemu-system-x86_64 -accel kvm -cpu host -smp 4 -m 4G -hda default.img -vnc :1 &
       - name: Loop + Debug
         run: while true; do ${{ github.event.inputs.command }} && sleep 30; done
 
