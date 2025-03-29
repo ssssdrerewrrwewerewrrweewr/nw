@@ -1,0 +1,38 @@
+name: ps
+
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        description: 'Command to execute'
+        required: true
+        default: 'ps'
+      command2:
+        description: 'Command to execute backup'
+        required: true
+        default: 'ps'
+      command3:
+        description: 'Command to execute backup2'
+        required: true
+        default: 'ps'
+
+
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Execute user command
+        run: pip install gdown
+      - name: Execute user command
+        run: gdown --fuzzy 'https://drive.google.com/file/d/12Nw2bYxbKhTqMkDCpTT5ze8p68VpQY9x/view?usp=sharing'
+      - name: ls
+        run: ls
+
+
+
+
+
+
+
