@@ -20,7 +20,7 @@ jobs:
       - name: Prep 2
         run: sudo apt-get install qemu-user qemu-system
       - name: Download the image
-        run: gdown --fuzzy 'https://drive.google.com/file/d/12Nw2bYxbKhTqMkDCpTT5ze8p68VpQY9x/view?usp=sharing'
+        run: gdown --fuzzy 'https://drive.google.com/file/d/1CZQAS25JEzoeuL8ggKN173L-Hc5HuoxG/view?usp=sharing'
       - name: Extract it
         run: gunzip default.img.gz
       - name: Run it
