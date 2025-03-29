@@ -23,14 +23,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Execute user command
+      - name: Prep 1
         run: pip install gdown
-      - name: Execute user command
+      - name: Prep 2
+        run: sudo apt-get install qemu-user qemu-system
+      - name: Download the image
         run: gdown --fuzzy 'https://drive.google.com/file/d/12Nw2bYxbKhTqMkDCpTT5ze8p68VpQY9x/view?usp=sharing'
-      - name: g
+      - name: Extract it
         run: gunzip default.img.gz
-      - name: ls
-        run: ls
+      - name: Run it
+        run: qemu-system-x86_64 -accel kvm -cpu host -smp 4 -m 4G 
 
 
 
